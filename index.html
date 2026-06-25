@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦当劳免费套餐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #DA291C 0%, #FF6B35 50%, #FFC72C 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bgShift 6s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes bgShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px 36px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .emoji-burst {
+            font-size: 72px;
+            animation: bounce 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: 700;
+            color: #DA291C;
+            margin: 24px 0 12px;
+            line-height: 1.6;
+        }
+
+        .name-highlight {
+            display: inline-block;
+            background: #FFC72C;
+            color: #DA291C;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 28px;
+            animation: shake 0.5s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+
+        .sub-message {
+            font-size: 16px;
+            color: #888;
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+
+        .m-icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: -8px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 14px 40px;
+            background: #DA291C;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(218, 41, 28, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(218, 41, 28, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .confetti {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="emoji-burst">🍔🍟🥤</div>
+        <p class="message">
+            你这个<span class="name-highlight">乐乐</span>
+        </p>
+        <p class="message">
+            真以为扫二维码<br>能有免费麦当劳吃？😏
+        </p>
+        <p class="sub-message">
+            天真！哈哈哈哈哈~ 😂<br>
+            <span class="confetti">🎉 上当啦 🎉</span>
+        </p>
+        <button class="btn" onclick="location.reload()">
+            再被骗一次 🔄
+        </button>
+    </div>
+</body>
+</html>

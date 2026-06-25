@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦当劳好友助力</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(180deg, #DA291C 0%, #C41E1E 60%, #A01515 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px 24px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .m-logo {
+            width: 44px;
+            height: 44px;
+            background: #FFC72C;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: #DA291C;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #DA291C;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .prize-card {
+            background: linear-gradient(135deg, #FFF8E1, #FFF3CD);
+            border: 2px dashed #FFC72C;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .prize-icon {
+            font-size: 48px;
+        }
+
+        .prize-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #DA291C;
+            margin: 4px 0;
+        }
+
+        .prize-desc {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-bg {
+            background: #EEE;
+            border-radius: 10px;
+            height: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #FFC72C, #FFA000);
+            height: 100%;
+            width: 60%;
+            border-radius: 10px;
+            animation: progressPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes progressPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .progress-text {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .progress-text strong {
+            color: #DA291C;
+        }
+
+        .qr-section {
+            background: #F5F5F5;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+
+        .qr-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .qr-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            background: white;
+            padding: 8px;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .note {
+            font-size: 11px;
+            color: #BBB;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="m-logo">M</div>
+            <div>
+                <div class="title">好友助力 · 免费领汉堡</div>
+            </div>
+        </div>
+        <p class="subtitle">🍔 麦当劳 · 限时活动</p>
+
+        <!-- 奖品 -->
+        <div class="prize-card">
+            <div class="prize-icon">🍔</div>
+            <div class="prize-name">巨无霸汉堡兑换券</div>
+            <div class="prize-desc">价值 ¥25.00 · 全国门店通用</div>
+        </div>
+
+        <!-- 助力进度 -->
+        <div class="progress-section">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <p class="progress-text">已集 <strong>3/5</strong> 位好友扫码，还差 <strong>2</strong> 人</p>
+        </div>
+
+        <!-- 二维码 -->
+        <div class="qr-section">
+            <p class="qr-label">📱 请好友扫描下方二维码助力</p>
+            <img src="qrcode_with_logo.png" alt="助力二维码" class="qr-image">
+            <p class="help-text">长按识别二维码 → 确认助力</p>
+        </div>
+
+        <p class="note">* 每位好友仅可助力一次，满 5 人后兑换券自动发放至麦当劳 App 卡包</p>
+    </div>
+</body>
+</html>
